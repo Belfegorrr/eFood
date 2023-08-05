@@ -18,11 +18,12 @@ export const GlobalCss = createGlobalStyle`
 body {
   background-color: ${cores.corBody};
   color: ${cores.branco};
-}
-`
 
-export const Container = styled.div`
+}
+
+.container {
   max-width: 1024px;
   width: 100%;
   margin: 0 auto;
+}
 `

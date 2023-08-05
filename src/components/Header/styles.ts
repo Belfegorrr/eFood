@@ -2,17 +2,16 @@ import { styled } from 'styled-components'
 import { cores } from '../../styles'
 
 export const HeaderBar = styled.header`
-  background-color: ${cores.corHeader};
-  padding: 24px;
+  background-color: ${cores.corDestaque};
+
   display: flex;
-  align-items: center;
-  justify-content: space-between;
 `
 
+// parte 2//////
 export const Links = styled.ul`
-  display: flex;
   margin-left: 40px;
 `
+//parte 2/////
 export const LinkItem = styled.li`
   margin-right: 16px;
 
