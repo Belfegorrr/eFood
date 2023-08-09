@@ -6,6 +6,12 @@ export const Container = styled.section`
 
 export const Lista = styled.ul`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   column-gap: 24px;
+  margin-top: 40px;
+`
+
+export const Title = styled.h2`
+  font-size: 18px;
+  font-weight: bold;
 `

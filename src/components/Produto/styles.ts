@@ -1,16 +1,20 @@
 import { styled } from 'styled-components'
 import { cores } from '../../styles'
+import { TagContainer } from '../Tag/styles'
 
 export const Card = styled.div`
-  background: ${cores.corHeader};
+  background: ${cores.branco};
   padding: 8px;
 
   a {
     padding: 8px;
   }
+  ${TagContainer} {
+    margin-right: 8px;
+  }
 `
 
-export const Titutlo = styled.h2`
+export const Titutlo = styled.h3`
   font-weight: bold;
   font-size: 16px;
   display: block;

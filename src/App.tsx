@@ -4,11 +4,18 @@ import { GlobalCss } from './styles'
 
 import Header from './components/Banner'
 import Banner from './components/Banner'
+import Produto from './components/Produto'
+import ProdutoLista from './components/ProdutoLista'
 
 const rotas = createBrowserRouter([
   {
     path: '/',
-    element: <Banner />
+    element: (
+      <>
+        <Banner />
+        <ProdutoLista title="Promoçoes" />
+      </>
+    )
   }
 ])
 
