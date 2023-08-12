@@ -1,6 +1,5 @@
 import { Imagem, Titulos } from './styles'
 import bannerImg from '../../assets/images/bg.png'
-import Tag from '../Tag'
 import { HeaderBar } from './styles'
 
 import logo from '../../assets/images/logo.png'
@@ -13,8 +12,7 @@ const Banner = () => (
       </HeaderBar>
       {/* <Tag size="big">.</Tag> */}
       <Titulos>
-        Viva experiências gastronômicas <br />
-        no conforto da sua casa
+        Viva experiências gastronômicas <br /> no conforto da sua casa
       </Titulos>
     </Imagem>
   </div>

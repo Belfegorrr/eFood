@@ -7,7 +7,7 @@ export const Imagem = styled.div`
   height: 300px;
 
   background-size: cover;
-  font-weigth: bold;
+  font-weight: bold;
   padding-top: 50px;
 
   .container {
@@ -24,13 +24,16 @@ export const Imagem = styled.div`
 export const Titulos = styled.h2`
   display: flex;
   justify-content: center;
-  font-size: 36px;
+  text-align: center;
 
-  padding-top: 90px;
-  color: ${cores.corDestaque};
+  font-size: 36px;
+  margin-top: 90px;
+
+  color: ${cores.corHeader};
 `
 
 export const HeaderBar = styled.header`
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
 `

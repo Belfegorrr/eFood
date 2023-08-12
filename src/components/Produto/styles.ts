@@ -22,6 +22,7 @@ export const Titutlo = styled.h3`
 `
 
 export const Descricao = styled.p`
+  color: ${cores.corHeader}
   font-size: 14px;
   line-height: 22px;
   display: block;
