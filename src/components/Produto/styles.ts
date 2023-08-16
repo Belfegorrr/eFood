@@ -3,6 +3,7 @@ import { cores } from '../../styles'
 import { TagContainer } from '../Tag/styles'
 
 export const Card = styled.div`
+  position: relative;
   background: ${cores.branco};
   padding: 8px;
 
@@ -22,7 +23,6 @@ export const Titutlo = styled.h3`
 `
 
 export const Descricao = styled.p`
-  color: ${cores.corHeader}
   font-size: 14px;
   line-height: 22px;
   display: block;

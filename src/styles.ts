@@ -17,8 +17,7 @@ export const GlobalCss = createGlobalStyle`
 
 body {
   background-color: ${cores.corDestaque};
-  color: ${cores.corBody};
-
+  color: ${cores.corHeader};
 }
 
 .container {

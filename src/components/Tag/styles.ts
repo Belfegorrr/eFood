@@ -4,6 +4,10 @@ import { cores } from '../../styles'
 import { Props } from '.'
 
 export const TagContainer = styled.div<Props>`
+  position: absolute;
+  top: 0;
+  right: 0;
+
   background-color: ${cores.corDestaque};
   color: ${cores.corHeader};
   font-size: ${(props) => (props.size === 'big' ? '16px' : '10px')};
