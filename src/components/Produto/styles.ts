@@ -5,7 +5,6 @@ import { TagContainer } from '../Tag/styles'
 export const Card = styled.div`
   position: relative;
   background: ${cores.branco};
-  padding: 8px;
 
   a {
     padding: 8px;

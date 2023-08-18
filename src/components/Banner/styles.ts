@@ -12,7 +12,6 @@ export const Imagem = styled.div`
 
   .container {
     position: relative;
-    padding-top
   }
 
   ${TagContainer} {
