@@ -8,8 +8,8 @@ export const TagContainer = styled.div<Props>`
   top: 0;
   right: 0;
 
-  background-color: ${cores.corDestaque};
-  color: ${cores.corHeader};
+  background-color: ${cores.corHeader};
+  color: ${cores.branco};
   font-size: ${(props) => (props.size === 'big' ? '16px' : '10px')};
   font-weigth: bold;
   padding: ${(props) => (props.size === 'big' ? '8px 16px' : '4px 6px')};

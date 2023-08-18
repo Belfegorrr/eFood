@@ -2,9 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import { GlobalCss } from './styles'
 
-import Header from './components/Banner'
 import Banner from './components/Banner'
-import Produto from './components/Produto'
 import ProdutoLista from './components/ProdutoLista'
 
 const rotas = createBrowserRouter([
@@ -24,7 +22,6 @@ function App() {
     <>
       <GlobalCss />
       <div className="container"></div>
-
       <RouterProvider router={rotas} />
     </>
   )
