@@ -1,27 +1,26 @@
 import Produto from '../Produto'
 import { Container, Lista } from './styles'
 
-import jap from '../../assets/images/image 2.png'
-import italiana from '../../assets/images/image 1.png'
+import Restaurante from '../../models/Restaurante'
 
-const ProdutoLista = () => (
+export type Props = {
+  restaurantes: Restaurante[]
+}
+
+const ProdutoLista = ({ restaurantes }: Props) => (
   <Container>
     <div className="container">
       <Lista>
-        <Produto
-          title="Hioki Sushi"
-          category="Japonesa"
-          description="Peça já o melhor da culinária japonesa no conforto da sua casa!"
-          image={jap}
-          infos="4.9"
-        />
-        <Produto
-          title="Hioki Sushi"
-          category="Japonesa"
-          description="Peça já o melhor da culinária japonesa no conforto da sua casa!"
-          image={italiana}
-          infos="4.9"
-        />
+        {restaurantes.map((restaurante) => (
+          <Produto
+            key={restaurante.id}
+            title={restaurante.title}
+            category={restaurante.category}
+            description={restaurante.description}
+            image={restaurante.image}
+            infos={restaurante.infos}
+          />
+        ))}
       </Lista>
     </div>
   </Container>
