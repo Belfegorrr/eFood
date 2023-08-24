@@ -7,6 +7,7 @@ export const Card = styled.div`
   position: relative;
   background: ${cores.branco};
   margin-top: 40px;
+  border: solid -1px;
   ${TagContainer} {
     margin-right: 8px;
   }
@@ -14,9 +15,10 @@ export const Card = styled.div`
 
 export const Titutlo = styled.h3`
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
   display: block;
   margin-left: 5px;
+  margin-top: 2px;
   text-decoration: none;
 `
 
@@ -46,4 +48,5 @@ export const Descricao = styled.p`
   display: block;
   margin-top: 16px;
   margin-bottom: 16px;
+  padding: 7px;
 `

@@ -1,4 +1,4 @@
-import Banner from '../../components/Banner'
+import BannerMenu from '../../components/BannerMenu'
 import ProdutoLista from '../../components/ProdutoLista'
 import Restaurante from '../../models/Restaurante'
 
@@ -46,7 +46,7 @@ const promocoes: Restaurante[] = [
 
 const Menu = () => (
   <>
-    <Banner />
+    <BannerMenu />
     <ProdutoLista restaurantes={promocoes} />
   </>
 )

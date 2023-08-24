@@ -11,6 +11,7 @@ export const ButtonContainer = styled.button`
   font-weight: bold;
   padding: 8px 16px;
   text-decoration: none;
+  margin: 0 0 5px 5px;
 `
 export const ButtonLink = styled(Link)`
   color: ${cores.branco};
