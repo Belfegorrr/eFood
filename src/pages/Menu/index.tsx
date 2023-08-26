@@ -1,6 +1,7 @@
 import BannerMenu from '../../components/BannerMenu'
 import Menu from '../../components/Menu'
 import Restaurante from '../../models/Restaurante'
+import Footer from '../../components/Footer'
 
 import jap from '../../assets/images/image 2.png'
 import italiana from '../../assets/images/image 1.png'
@@ -48,6 +49,7 @@ const ListaMenu = () => (
   <>
     <BannerMenu />
     <Menu />
+    <Footer />
   </>
 )
 
