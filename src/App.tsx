@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { GlobalCss } from './styles'
 
 import Home from './pages/Home'
-import Menu from './pages/Menu'
+import ListaMenu from './pages/Menu'
 
 const rotas = createBrowserRouter([
   {
@@ -12,7 +12,7 @@ const rotas = createBrowserRouter([
   },
   {
     path: '/menu',
-    element: <Menu />
+    element: <ListaMenu />
   }
 ])
 

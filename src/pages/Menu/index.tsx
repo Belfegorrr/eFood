@@ -1,5 +1,5 @@
 import BannerMenu from '../../components/BannerMenu'
-import ProdutoLista from '../../components/ProdutoLista'
+import Menu from '../../components/Menu'
 import Restaurante from '../../models/Restaurante'
 
 import jap from '../../assets/images/image 2.png'
@@ -44,11 +44,11 @@ const promocoes: Restaurante[] = [
   }
 ]
 
-const Menu = () => (
+const ListaMenu = () => (
   <>
     <BannerMenu />
-    <ProdutoLista restaurantes={promocoes} />
+    <Menu />
   </>
 )
 
-export default Menu
+export default ListaMenu
