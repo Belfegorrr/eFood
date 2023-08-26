@@ -4,6 +4,7 @@ import Restaurante from '../../models/Restaurante'
 
 import jap from '../../assets/images/image 2.png'
 import italiana from '../../assets/images/image 1.png'
+import Footer from '../../components/Footer'
 
 const promocoes: Restaurante[] = [
   {
@@ -48,6 +49,7 @@ const Home = () => (
   <>
     <Banner />
     <ProdutoLista restaurantes={promocoes} />
+    <Footer />
   </>
 )
 
