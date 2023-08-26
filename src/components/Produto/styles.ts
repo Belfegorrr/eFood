@@ -1,25 +1,23 @@
 import { styled } from 'styled-components'
 import { cores } from '../../styles'
-import { TagContainer } from '../Tag/styles'
 import { Link } from 'react-router-dom'
 
 export const Card = styled.div`
   position: relative;
   background: ${cores.branco};
   margin-top: 40px;
-  border: solid -1px;
-  ${TagContainer} {
-    margin-right: 8px;
-  }
+  border: solid 1px;
 `
 
 export const Titutlo = styled.h3`
+  display: block;
+
   font-weight: bold;
   font-size: 18px;
-  display: block;
+  text-decoration: none;
+
   margin-left: 5px;
   margin-top: 2px;
-  text-decoration: none;
 `
 
 export const NavLink = styled(Link)`
@@ -31,6 +29,7 @@ export const NavBar = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   font-weight: bold;
 
   .classificacao {
@@ -43,10 +42,12 @@ export const NavBar = styled.section`
 `
 
 export const Descricao = styled.p`
-  font-size: 14px;
-  line-height: 22px;
   display: block;
+
   margin-top: 16px;
   margin-bottom: 16px;
   padding: 7px;
+
+  font-size: 14px;
+  line-height: 22px;
 `

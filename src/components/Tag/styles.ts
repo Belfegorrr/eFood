@@ -5,8 +5,8 @@ import { Props } from '.'
 
 export const TagContainer = styled.div<Props>`
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 15px;
+  right: 15px;
 
   background-color: ${cores.corHeader};
   color: ${cores.branco};

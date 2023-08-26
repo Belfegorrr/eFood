@@ -12,9 +12,15 @@ const Footer = () => (
         <img className="logo" src={logo} alt="Logo efood" />
       </div>
       <div>
-        <img className="social--links" src={instagram} alt="Insta" />
-        <img className="social--links" src={facebook} alt="Face" />
-        <img className="social--links" src={twitter} alt="Twit" />
+        <a href="#">
+          <img className="social--links" src={instagram} alt="Insta" />
+        </a>
+        <a href="#">
+          <img className="social--links" src={facebook} alt="Face" />
+        </a>
+        <a href="#">
+          <img className="social--links" src={twitter} alt="Twit" />
+        </a>
       </div>
       <DescricaoFooter>
         A efood é uma plataforma para divulgação de estabelecimentos, a
