@@ -44,13 +44,29 @@ export const TituloMenu = styled.h3`
 /*-------------------------- */
 
 export const Modal = styled.div`
+  display: none;
   position: fixed;
   top: 100px;
   left: 300px;
   width: 100%;
   height: 100%;
+
+  &.visivel {
+    display: flex;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.33);
+  }
 `
 export const ModalContent = styled.div`
+  position: relative;
+  z-index: 1;
   width: 1024px;
   height: 344px;
   display: flex;
