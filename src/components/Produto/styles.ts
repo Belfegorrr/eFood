@@ -7,6 +7,11 @@ export const Card = styled.div`
   background: ${cores.branco};
   margin-top: 40px;
   border: solid 1px;
+
+  .capa {
+    width: 472px;
+    height: 217px;
+  }
 `
 
 export const Titutlo = styled.h3`

@@ -8,13 +8,13 @@ type Props = {
   title: string
   category: string
   description: string
-  infos: string
+  infos: number
   image: string
 }
 
 const Produto = ({ title, category, description, infos, image }: Props) => (
   <Card>
-    <img src={image} alt={title} />
+    <img src={image} alt={title} className="capa" />
     <NavBar>
       <NavLink to="/menu">
         <Titutlo>{title}</Titutlo>
