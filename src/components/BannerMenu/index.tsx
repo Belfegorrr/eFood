@@ -8,7 +8,7 @@ import logo from '../../assets/images/logo.png'
 import bannerImg from '../../assets/images/bg.png'
 
 const BannerMenu = () => {
-  const [cardapio, setCardapio] = useState<Restaurante>()
+  const [cardapio, setCardapio] = useState<Restaurante[]>()
 
   useEffect(() => {
     fetch('https://fake-api-tau.vercel.app/api/efood/restaurantes')
@@ -31,7 +31,7 @@ const BannerMenu = () => {
         </HeaderBar>
         <BannerBg
           style={{
-            backgroundImage: `url(${cardapio.capa})`
+            backgroundImage: `url(${cardapio[0].capa})`
           }}
         >
           <TituloMenu>
