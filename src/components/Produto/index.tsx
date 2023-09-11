@@ -12,6 +12,7 @@ import {
 import estrela from '../../assets/images/estrela.svg'
 
 type Props = {
+  id: number
   title: string
   category: string
   description: string
@@ -21,6 +22,7 @@ type Props = {
 }
 
 const Produto = ({
+  id,
   title,
   category,
   description,
@@ -32,7 +34,7 @@ const Produto = ({
     <Card>
       <img src={image} alt={title} className="capa" />
       <NavBar>
-        <NavLink to="/menu">
+        <NavLink to={`/menu/${id}`}>
           <Titutlo>{title}</Titutlo>
         </NavLink>
         <section className="classificacao">

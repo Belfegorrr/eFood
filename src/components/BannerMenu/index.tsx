@@ -1,26 +1,17 @@
 import { Link } from 'react-router-dom'
-import { useEffect, useState } from 'react'
-import { Restaurante } from '../../pages/Home'
 
 import { BannerBg, HeaderBar, Image, TituloMenu } from './styles'
 
 import logo from '../../assets/images/logo.png'
 import bannerImg from '../../assets/images/bg.png'
 
-const BannerMenu = () => {
-  const [cardapio, setCardapio] = useState<Restaurante[]>()
+import { Restaurante } from '../../pages/Home'
 
-  useEffect(() => {
-    fetch('https://fake-api-tau.vercel.app/api/efood/restaurantes')
-      .then((res) => res.json())
-      .then((res) => setCardapio(res))
-  }, [])
+type Props = {
+  restaurant: Restaurante
+}
 
-  if (!cardapio) {
-    return <h3>Carregando ...</h3>
-  }
-  console.log(cardapio)
-
+const BannerMenu = ({ restaurant }: Props) => {
   return (
     <div className="container">
       <Image style={{ backgroundImage: `url(${bannerImg})` }}>
@@ -31,7 +22,7 @@ const BannerMenu = () => {
         </HeaderBar>
         <BannerBg
           style={{
-            backgroundImage: `url(${cardapio[0].capa})`
+            backgroundImage: `url(${restaurant.capa})`
           }}
         >
           <TituloMenu>
