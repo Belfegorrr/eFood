@@ -1,12 +1,9 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-
-import { Restaurante } from '../Home'
 import BannerMenu from '../../components/BannerMenu'
-import Menu from '../../components/Menu'
-import Footer from '../../components/Footer'
+import { Restaurante } from '../Home'
 
-const ListaMenu = () => {
+const Product = () => {
   const { id } = useParams()
   const [restaurant, setRestaurant] = useState<Restaurante>()
 
@@ -19,13 +16,12 @@ const ListaMenu = () => {
   if (!restaurant) {
     return <h3>Carregando...</h3>
   }
+
   return (
     <>
       <BannerMenu restaurant={restaurant} />
-      <Menu />
-      <Footer />
     </>
   )
 }
 
-export default ListaMenu
+export default Product
