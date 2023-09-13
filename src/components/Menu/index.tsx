@@ -1,16 +1,26 @@
+import { Cardapio } from '../../pages/Home'
 import Pedidos from '../Pedidos'
 import { ContainerMenu, ListaPedidos } from './styles'
 
-const Menu = () => (
-  <ContainerMenu>
-    <ListaPedidos>
-      <Pedidos />
-      <Pedidos />
-      <Pedidos />
-      <Pedidos />
-      <Pedidos />
-      <Pedidos />
-    </ListaPedidos>
-  </ContainerMenu>
-)
+type Props = {
+  items: Cardapio[]
+}
+const Menu = ({ items }: Props) => {
+  return (
+    <ContainerMenu>
+      <ListaPedidos>
+        {items.map((items, id) => (
+          <Pedidos
+            key={id}
+            foto={items.foto}
+            nome={items.nome}
+            preco={items.preco}
+            descricao={items.descricao}
+            porcao={items.porcao}
+          />
+        ))}
+      </ListaPedidos>
+    </ContainerMenu>
+  )
+}
 export default Menu

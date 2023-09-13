@@ -22,7 +22,7 @@ const ListaMenu = () => {
   return (
     <>
       <BannerMenu restaurant={restaurant} />
-      <Menu />
+      {/* <Menu /> */}
       <Footer />
     </>
   )

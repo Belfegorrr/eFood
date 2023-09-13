@@ -27,9 +27,9 @@ const BannerMenu = ({ restaurant }: Props) => {
         >
           <TituloMenu>
             <h3>
-              <i>Italiana</i>
+              <i>{restaurant.tipo}</i>
             </h3>
-            <h2>La Dolce Vita Trattoria</h2>
+            <h2>{restaurant.titulo}</h2>
           </TituloMenu>
         </BannerBg>
       </Image>
