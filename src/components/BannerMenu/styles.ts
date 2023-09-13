@@ -2,6 +2,7 @@ import { styled } from 'styled-components'
 import { cores } from '../../styles'
 
 export const Image = styled.div`
+  object-fit: cover;
   width: 100%;
   height: 500px;
   display: flex;

@@ -14,6 +14,7 @@ export const CardPedido = styled.div`
   height: 338px;
 
   img {
+    object-fit: cover;
     position: absolute;
     top: 5px;
     left: 8px;
@@ -33,11 +34,13 @@ export const BotaoMenu = styled.button`
   color: ${cores.corHeader};
 `
 export const DescricaoMenu = styled.p`
+  font-size: 14px;
+  line-height: 22px;
   margin: 0 0 10px 8px;
   color: ${cores.corBody};
 `
 export const TituloMenu = styled.h3`
-  margin: 10px 0 8px 8px;
+  margin: 0 0 8px 8px;
   color: ${cores.corBody};
 `
 
@@ -46,10 +49,11 @@ export const TituloMenu = styled.h3`
 export const Modal = styled.div`
   display: none;
   position: fixed;
-  top: 100px;
-  left: 300px;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  z-index: 1;
 
   &.visivel {
     display: flex;
@@ -67,6 +71,8 @@ export const Modal = styled.div`
 export const ModalContent = styled.div`
   position: relative;
   z-index: 1;
+  top: 250px;
+  left: 420px;
   width: 1024px;
   height: 344px;
   display: flex;
@@ -77,12 +83,13 @@ export const ModalContent = styled.div`
   color: ${cores.branco};
 `
 export const ModalPedido = styled.div`
-  position: relative;
   padding: 20px;
 
   img {
+    object-fit: cover;
     position: absolute;
-    top: 0;
+    top: 5px;
+
     right: 25px;
   }
 
@@ -100,6 +107,7 @@ export const ModalPedido = styled.div`
   }
 `
 export const ModalImagem = styled.img`
+  object-fit: cover;
   margin-left: 30px;
   width: 280px;
   height: 280px;

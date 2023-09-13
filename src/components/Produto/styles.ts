@@ -79,3 +79,18 @@ export const TagDestacado = styled.div`
   font-size: 10px;
   font-weigth: bold;
 `
+// color: #fff;
+//     font-size: 16px;
+//     background-color: #e66767;
+//     font-weight: bold;
+//     padding: 8px 16px;
+//     text-decoration: none;
+
+// order: none;
+//     color: #fff;
+//     font-size: 16px;
+//     background-color: #e66767;
+//     font-weight: bold;
+//     padding: 8px 16px;
+//     text-decoration: none;
+//     margin: 0 0 5px 5px;

@@ -49,7 +49,7 @@ const Produto = ({
         ))}
       </div>
       <Descricao>{description}</Descricao>
-      <Button type="button" title="nova">
+      <Button type="link" title="Detalhes" to={`/menu/${id}`}>
         Saiba mais
       </Button>
     </Card>

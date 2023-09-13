@@ -21,9 +21,33 @@ type Props = {
   descricao: string
   porcao: string
 }
+interface ModalState {
+  isVisible: boolean
+}
 
 const Pedidos = ({ foto, nome, preco, descricao, porcao }: Props) => {
-  const [modalEstaAberto, setmodalEstaAberto] = useState(false)
+  const [modal, setModal] = useState<ModalState>({
+    isVisible: false
+  })
+  const formataPreco = (preco: number) => {
+    return new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency: 'BRL'
+    }).format(preco)
+  }
+
+  const getDescricao = (descricao: string) => {
+    if (descricao.length > 123) {
+      return descricao.slice(0, 120) + '...'
+    }
+    return descricao
+  }
+
+  const closeModal = () => {
+    setModal({
+      isVisible: false
+    })
+  }
 
   console.log()
 
@@ -32,37 +56,35 @@ const Pedidos = ({ foto, nome, preco, descricao, porcao }: Props) => {
       <div className="container">
         <CardPedido>
           <img src={foto} alt="Backgroud do Pedido" />
-          <TituloMenu onClick={() => setmodalEstaAberto(true)}>
+          <TituloMenu onClick={() => setModal({ isVisible: true })}>
             {nome}
           </TituloMenu>
           {/* mudar descricao */}
-          <DescricaoMenu>{descricao}</DescricaoMenu>
-          <BotaoMenu onClick={() => setmodalEstaAberto(true)}>
+          <DescricaoMenu>{getDescricao(descricao)}</DescricaoMenu>
+          <BotaoMenu onClick={() => setModal({ isVisible: true })}>
             Mais Detalhes
           </BotaoMenu>
         </CardPedido>
-        <Modal className={modalEstaAberto ? 'visivel' : ''}>
+        <Modal className={modal.isVisible ? 'visivel' : ''}>
           <ModalContent>
             <div>
               <ModalImagem src={foto} alt="Imagem do pedido" />
             </div>
             <ModalPedido>
-              <img
-                src={close}
-                alt="Close Icon"
-                onClick={() => setmodalEstaAberto(false)}
-              />
+              <img src={close} alt="Close Icon" onClick={() => closeModal()} />
               <h2>{nome}</h2>
               <p>
                 {descricao}
                 <br />
                 <br />
-                Serve de {porcao}
+                Serve {porcao}
               </p>
-              <ModalBotao>Adicionar ao carrinho - R$ {preco}</ModalBotao>
+              <ModalBotao>
+                Adicionar ao carrinho - {formataPreco(preco)}
+              </ModalBotao>
             </ModalPedido>
           </ModalContent>
-          <div className="overlay"></div>
+          <div onClick={() => closeModal()} className="overlay"></div>
         </Modal>
       </div>
     </>
