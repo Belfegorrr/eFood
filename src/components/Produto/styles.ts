@@ -6,6 +6,7 @@ export const Card = styled.div`
   position: relative;
   background: ${cores.branco};
   margin-top: 40px;
+  height: 450px;
   border: solid 1px;
 
   .capa {
