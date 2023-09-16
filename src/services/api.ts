@@ -6,12 +6,18 @@ const api = createApi({
     baseUrl: 'https://fake-api-tau.vercel.app/api/efood/restaurantes'
   }),
   endpoints: (builder) => ({
-    getFeaturedRestaurant: builder.query<Restaurante, void>({
-      query: () => 'menu'
+    getFeaturedRestaurant: builder.query<Restaurante[], void>({
+      query: () => ''
+    }),
+    getFeaturedRestaurantMenu: builder.query<Restaurante, string>({
+      query: (id) => `${id}`
     })
   })
 })
 
-export const { useGetFeaturedRestaurantQuery } = api
+export const {
+  useGetFeaturedRestaurantQuery,
+  useGetFeaturedRestaurantMenuQuery
+} = api
 
 export default api
