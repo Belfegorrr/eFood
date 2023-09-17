@@ -7,18 +7,26 @@ import bannerImg from '../../assets/images/bg.png'
 
 import { Restaurante } from '../../pages/Home'
 
+import { open } from '../../store/reducers/cart'
+import { useDispatch } from 'react-redux'
+
 type Props = {
   restaurant: Restaurante
 }
 
 const BannerMenu = ({ restaurant }: Props) => {
+  const dispatch = useDispatch()
+
+  const openCart = () => {
+    dispatch(open())
+  }
   return (
     <div className="container">
       <Image style={{ backgroundImage: `url(${bannerImg})` }}>
         <HeaderBar>
           <Link to="/">Restaurantes</Link>
           <img src={logo} alt="Logo" />
-          <a href="#">0 produto(s) no carrinho</a>
+          <a onClick={openCart}>0 produto(s) no carrinho</a>
         </HeaderBar>
         <BannerBg
           style={{

@@ -1,4 +1,4 @@
-import { Cardapio } from '../../pages/Home'
+import { Cardapio, Restaurante } from '../../pages/Home'
 import Pedidos from '../Pedidos'
 import { ContainerMenu, ListaPedidos } from './styles'
 

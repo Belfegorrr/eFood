@@ -13,6 +13,9 @@ import {
 } from './styles'
 
 import close from '../../assets/images/close.svg'
+import { useDispatch } from 'react-redux'
+import { add } from '../../store/reducers/cart'
+import { Cardapio } from '../../pages/Home'
 
 type Props = {
   foto: string
@@ -26,6 +29,11 @@ interface ModalState {
 }
 
 const Pedidos = ({ foto, nome, preco, descricao, porcao }: Props) => {
+  const dispatch = useDispatch()
+  // const addToCart = () => {
+  //   dispatch(add())
+  // }
+
   const [modal, setModal] = useState<ModalState>({
     isVisible: false
   })
