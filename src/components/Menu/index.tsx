@@ -12,6 +12,7 @@ const Menu = ({ items }: Props) => {
         {items.map((items, id) => (
           <Pedidos
             key={id}
+            id={id}
             foto={items.foto}
             nome={items.nome}
             preco={items.preco}

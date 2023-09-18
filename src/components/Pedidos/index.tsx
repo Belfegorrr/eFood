@@ -14,10 +14,12 @@ import {
 
 import close from '../../assets/images/close.svg'
 import { useDispatch } from 'react-redux'
-import { add } from '../../store/reducers/cart'
+import { add, open } from '../../store/reducers/cart'
 import { Cardapio } from '../../pages/Home'
+import { useParams } from 'react-router-dom'
 
 type Props = {
+  id: number
   foto: string
   nome: string
   preco: number
@@ -29,14 +31,22 @@ interface ModalState {
 }
 
 const Pedidos = ({ foto, nome, preco, descricao, porcao }: Props) => {
+  const { id } = useParams()
   const dispatch = useDispatch()
-  // const addToCart = () => {
-  //   dispatch(add())
-  // }
+
+  const [selectedProduct, setSelectedProduct] = useState<Cardapio>()
+  const addToCart = () => {
+    dispatch(add(selectedProduct!))
+    dispatch(open())
+    setModal({
+      isVisible: false
+    })
+  }
 
   const [modal, setModal] = useState<ModalState>({
     isVisible: false
   })
+
   const formataPreco = (preco: number) => {
     return new Intl.NumberFormat('pt-BR', {
       style: 'currency',
@@ -56,22 +66,21 @@ const Pedidos = ({ foto, nome, preco, descricao, porcao }: Props) => {
       isVisible: false
     })
   }
-
-  console.log()
+  const openModal = () => {
+    setSelectedProduct(selectedProduct!)
+    setModal({
+      isVisible: true
+    })
+  }
 
   return (
     <>
       <div className="container">
         <CardPedido>
           <img src={foto} alt="Backgroud do Pedido" />
-          <TituloMenu onClick={() => setModal({ isVisible: true })}>
-            {nome}
-          </TituloMenu>
-          {/* mudar descricao */}
+          <TituloMenu onClick={() => openModal()}>{nome}</TituloMenu>
           <DescricaoMenu>{getDescricao(descricao)}</DescricaoMenu>
-          <BotaoMenu onClick={() => setModal({ isVisible: true })}>
-            Mais Detalhes
-          </BotaoMenu>
+          <BotaoMenu onClick={() => openModal()}>Mais Detalhes</BotaoMenu>
         </CardPedido>
         <Modal className={modal.isVisible ? 'visivel' : ''}>
           <ModalContent>
@@ -87,7 +96,7 @@ const Pedidos = ({ foto, nome, preco, descricao, porcao }: Props) => {
                 <br />
                 Serve {porcao}
               </p>
-              <ModalBotao>
+              <ModalBotao onClick={addToCart}>
                 Adicionar ao carrinho - {formataPreco(preco)}
               </ModalBotao>
             </ModalPedido>
