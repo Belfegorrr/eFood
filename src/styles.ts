@@ -6,6 +6,12 @@ export const cores = {
   corBody: '#ffebd9',
   corDestaque: '#fff8f1'
 }
+
+export const breakpoints = {
+  desktop: '1024px',
+  tablet: '728px',
+  mobile: '576px'
+}
 export const GlobalCss = createGlobalStyle`
 * {
   margin: 0;
@@ -24,5 +30,9 @@ body {
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
+
+  @media (max-width: ${breakpoints.desktop}) {
+
+  }
 }
 `

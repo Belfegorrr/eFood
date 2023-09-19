@@ -1,4 +1,5 @@
 import { styled } from 'styled-components'
+import { breakpoints } from '../../styles'
 
 export const Container = styled.section`
   padding: 32px 0;
@@ -16,6 +17,23 @@ export const Lista = styled.ul`
   grid-template-columns: 1fr 1fr;
   column-gap: 100px;
   margin-top: 40px;
+
+  @media (max-width: ${breakpoints.desktop}) {
+    grid-template-columns: 1fr;
+    row-gap: 50px;
+  }
+  @media (min-width: ${breakpoints.tablet}) {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+  }
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 25px;
+  }
+  @media (min-width: ${breakpoints.desktop}) {
+    row-gap: 50px;
+    margin-bottom: 50px;
+  }
 `
 
 export const Title = styled.h2`

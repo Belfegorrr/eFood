@@ -1,5 +1,5 @@
 import { styled } from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 import { TagContainer } from '../Tag/styles'
 
 export const Imagem = styled.div`
@@ -29,6 +29,11 @@ export const Titulos = styled.h2`
   margin-top: 90px;
 
   color: ${cores.corHeader};
+
+  @media (max-width: ${breakpoints.mobile}) {
+    width: 100vw;
+    font-size: 150%;
+  }
 `
 
 export const HeaderBar = styled.header`

@@ -1,5 +1,5 @@
 import { styled } from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 
 export const ContainerFooter = styled.div`
   display: flex;
@@ -24,4 +24,9 @@ export const DescricaoFooter = styled.p`
   font-size: 10px;
   line height: 11.72px;
   text-align: center;
+
+  @media (max-width: ${breakpoints.mobile}) {
+    width: 90vw;
+    font-size: 11px;
+  }
 `

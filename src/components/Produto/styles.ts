@@ -1,5 +1,5 @@
 import { styled } from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 import { Link } from 'react-router-dom'
 
 export const Card = styled.div`
@@ -13,6 +13,36 @@ export const Card = styled.div`
     width: 472px;
     height: 217px;
     object-fit: cover;
+
+    @media (max-width: ${breakpoints.mobile}) {
+      max-width: 472px;
+      width: 90vw;
+    }
+    @media (min-width: ${breakpoints.tablet}) {
+      max-width: 350px;
+      width: 90vw;
+    }
+    @media (min-width: 900px) {
+      max-width: 400px;
+    width: 90vw;
+
+    }
+  }
+
+  @media (max-width: ${breakpoints.desktop}) {
+    max-width: 472px;
+    width: 90vw;
+    height: 100%;
+  }
+  @media (min-width: ${breakpoints.tablet}) {
+    max-width: 350px;
+    width: 90vw
+    height: 100%;
+  }
+  @media (min-width: 900px) {
+    max-width: 400px;
+    width: 90vw;
+    height: 100%;
   }
 `
 
@@ -80,18 +110,3 @@ export const TagDestacado = styled.div`
   font-size: 10px;
   font-weigth: bold;
 `
-// color: #fff;
-//     font-size: 16px;
-//     background-color: #e66767;
-//     font-weight: bold;
-//     padding: 8px 16px;
-//     text-decoration: none;
-
-// order: none;
-//     color: #fff;
-//     font-size: 16px;
-//     background-color: #e66767;
-//     font-weight: bold;
-//     padding: 8px 16px;
-//     text-decoration: none;
-//     margin: 0 0 5px 5px;
