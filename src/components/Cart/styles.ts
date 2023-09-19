@@ -88,6 +88,7 @@ export const CartItem = styled.li`
       right: 0;
       width: 16px;
       height: 16px;
+      cursor: pointer;
     }
   }
 `

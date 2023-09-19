@@ -1,4 +1,8 @@
-import Button from '../Button'
+import { useDispatch, useSelector } from 'react-redux'
+
+import { RootReducer } from '../../store'
+import { close, remove } from '../../store/reducers/cart'
+import { formataPreco } from '../Menu'
 import {
   ButtonCart,
   CartContainer,
@@ -8,35 +12,47 @@ import {
   Overlay,
   SideBar
 } from './styles'
+
 import delet from '../../assets/images/delete.svg'
-import bgitem from '../../assets/images/image 3.png'
-import { useDispatch, useSelector } from 'react-redux'
-import { RootReducer } from '../../store'
-import { close } from '../../store/reducers/cart'
 
 const Cart = () => {
-  const { isOpen } = useSelector((state: RootReducer) => state.cart)
+  const { isOpen, items } = useSelector((state: RootReducer) => state.cart)
   const dispatch = useDispatch()
 
   const closeCart = () => {
     dispatch(close())
+  }
+  const removeItem = (id: number) => {
+    dispatch(remove(id))
+  }
+
+  const getTotalPrice = () => {
+    return items.reduce((acumulador, valorAtual) => {
+      return (acumulador += valorAtual.preco)
+    }, 0)
   }
   return (
     <CartContainer className={isOpen ? 'is-open' : ''}>
       <Overlay onClick={closeCart} />
       <SideBar>
         <ListaItem>
-          <CartItem>
-            <img src={bgitem} alt="" />
-            <div>
-              <h3>Nome do jogo</h3>
-              <p>R$ 60,90</p>
-              <img src={delet} alt="" />
-            </div>
-          </CartItem>
+          {items.map((item) => (
+            <CartItem key={item.id}>
+              <img src={item.foto} alt={item.nome} />
+              <div>
+                <h3>{item.nome}</h3>
+                <p>{formataPreco(item.preco)}</p>
+                <img
+                  onClick={() => removeItem(item.id)}
+                  src={delet}
+                  alt="Botao Delete"
+                />
+              </div>
+            </CartItem>
+          ))}
         </ListaItem>
         <DescricaoItem>
-          Total <span>R$ 250,00 </span>
+          Total <span>{formataPreco(getTotalPrice())} </span>
         </DescricaoItem>
 
         <ButtonCart title="Clique aqui para continuar com a compra">

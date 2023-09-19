@@ -2,7 +2,6 @@ import { useParams } from 'react-router-dom'
 import { useGetFeaturedRestaurantMenuQuery } from '../../services/api'
 
 import BannerMenu from '../../components/BannerMenu'
-import Footer from '../../components/Footer'
 import Menu from '../../components/Menu'
 
 const Product = () => {
@@ -15,7 +14,6 @@ const Product = () => {
     <>
       <BannerMenu restaurant={restaurant} />
       <Menu items={restaurant.cardapio} />
-      <Footer />
     </>
   )
 }

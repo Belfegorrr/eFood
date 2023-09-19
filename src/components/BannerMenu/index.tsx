@@ -8,7 +8,8 @@ import bannerImg from '../../assets/images/bg.png'
 import { Restaurante } from '../../pages/Home'
 
 import { open } from '../../store/reducers/cart'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootReducer } from '../../store'
 
 type Props = {
   restaurant: Restaurante
@@ -16,6 +17,7 @@ type Props = {
 
 const BannerMenu = ({ restaurant }: Props) => {
   const dispatch = useDispatch()
+  const { items } = useSelector((state: RootReducer) => state.cart)
 
   const openCart = () => {
     dispatch(open())
@@ -26,7 +28,7 @@ const BannerMenu = ({ restaurant }: Props) => {
         <HeaderBar>
           <Link to="/">Restaurantes</Link>
           <img src={logo} alt="Logo" />
-          <a onClick={openCart}>0 produto(s) no carrinho</a>
+          <a onClick={openCart}>{items.length} produto(s) no carrinho</a>
         </HeaderBar>
         <BannerBg
           style={{

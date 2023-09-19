@@ -3,8 +3,6 @@ import { useGetFeaturedRestaurantQuery } from '../../services/api'
 import Banner from '../../components/Banner'
 import ProdutoLista from '../../components/ProdutoLista'
 
-import Footer from '../../components/Footer'
-
 export interface Cardapio {
   id: number
   foto: string
@@ -33,7 +31,6 @@ const Home = () => {
       <>
         <Banner />
         <ProdutoLista restaurantes={restaurantes} />
-        <Footer />
       </>
     )
   }

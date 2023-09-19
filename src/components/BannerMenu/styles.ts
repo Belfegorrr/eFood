@@ -25,6 +25,9 @@ export const HeaderBar = styled.header`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  a {
+    cursor: pointer;
+  }
 `
 export const BannerBg = styled.div`
   width: 100%;
