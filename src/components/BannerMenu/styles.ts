@@ -1,5 +1,5 @@
 import { styled } from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 
 export const Image = styled.div`
   object-fit: cover;
@@ -27,6 +27,19 @@ export const HeaderBar = styled.header`
   align-items: center;
   a {
     cursor: pointer;
+    @media (max-width: ${breakpoints.mobile}) {
+      font-size: 90%;
+      span {
+        display: none;
+      }
+    }
+  }
+
+  img {
+    @media (max-width: ${breakpoints.mobile}) {
+      width: 30%;
+      height: 90%;
+    }
   }
 `
 export const BannerBg = styled.div`
@@ -36,6 +49,10 @@ export const BannerBg = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   color: ${cores.branco};
+
+  @media (max-width: ${breakpoints.mobile}) {
+    width: 100vw;
+  }
 `
 export const TituloMenu = styled.section`
   display: flex;
@@ -55,5 +72,16 @@ export const TituloMenu = styled.section`
     font-size: 32px;
     top: 240px;
     left: 170px;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    h3 {
+      top: 40px;
+      left: 10%;
+    }
+    h2 {
+      top: 240px;
+      left: 10%;
+    }
   }
 `

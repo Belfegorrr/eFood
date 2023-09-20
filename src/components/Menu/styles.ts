@@ -1,11 +1,19 @@
 import { styled } from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 
 export const ListaPedidos = styled.ul`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 40px;
   row-gap: 30px;
+
+  @media (max-width: ${breakpoints.desktop}) {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+  }
+  @media (max-width: ${breakpoints.mobile}) {
+    grid-template-columns: 1fr;
+  }
 `
 export const ContainerMenu = styled.section`
   display: flex;
@@ -47,6 +55,15 @@ export const ModalContent = styled.div`
 
   background-color: ${cores.corHeader};
   color: ${cores.branco};
+
+  @media (max-width: ${breakpoints.mobile}) {
+    height: 85%;
+    top: 0%;
+    left: 0%;
+    width: 300px;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
 `
 export const ModalPedido = styled.div`
   padding: 20px;
@@ -78,6 +95,14 @@ export const ModalImagem = styled.img`
   height: 280px;
   top: 0;
   right: 0;
+
+  @media (max-width: ${breakpoints.mobile}) {
+    width: 90px;
+    height: 90px;
+    margin-left: 0px;
+    margin-top: 5px;
+    right: 0;
+  }
 `
 export const ModalBotao = styled.button`
   border: none;

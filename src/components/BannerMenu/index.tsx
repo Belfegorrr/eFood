@@ -26,9 +26,13 @@ const BannerMenu = ({ restaurant }: Props) => {
     <div className="container">
       <Image style={{ backgroundImage: `url(${bannerImg})` }}>
         <HeaderBar>
-          <Link to="/">Restaurantes</Link>
+          <Link to="/" className="link-home">
+            Restaurantes
+          </Link>
           <img src={logo} alt="Logo" />
-          <a onClick={openCart}>{items.length} produto(s) no carrinho</a>
+          <a onClick={openCart}>
+            {items.length} {''} produto(s) <span>no carrinho</span>
+          </a>
         </HeaderBar>
         <BannerBg
           style={{

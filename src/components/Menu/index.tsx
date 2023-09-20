@@ -63,6 +63,7 @@ const Menu = ({ items }: Props) => {
       isVisible: true
     })
   }
+
   return (
     <>
       <ContainerMenu>
