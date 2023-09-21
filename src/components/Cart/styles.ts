@@ -1,5 +1,5 @@
 import { styled } from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 
 export const Overlay = styled.div`
   position: absolute;
@@ -30,10 +30,16 @@ export const SideBar = styled.aside`
   width: 100%;
   background-color: ${cores.corHeader};
   z-index: 1;
+
+  @media (max-width: 420px) {
+    max-width: 250px;
+  }
 `
 export const ListaItem = styled.ul`
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  margin-left: 5px;
 `
 export const DescricaoItem = styled.p`
   display: flex;
@@ -90,5 +96,10 @@ export const CartItem = styled.li`
       height: 16px;
       cursor: pointer;
     }
+  }
+
+  @media (max-width: 420px) {
+    margin-left: 5px;
+    max-width: 230px;
   }
 `

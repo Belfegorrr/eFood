@@ -43,11 +43,12 @@ export const Modal = styled.div`
   }
 `
 export const ModalContent = styled.div`
-  position: relative;
+  position: fixed;
   z-index: 1;
-  top: 250px;
-  left: 420px;
-  width: 1024px;
+  top: 21%;
+  left: 15%;
+  max-width: 1024px;
+  width: 80%;
   height: 344px;
   display: flex;
   justify-content: space-between;
@@ -56,13 +57,31 @@ export const ModalContent = styled.div`
   background-color: ${cores.corHeader};
   color: ${cores.branco};
 
-  @media (max-width: ${breakpoints.mobile}) {
-    height: 85%;
-    top: 0%;
-    left: 0%;
-    width: 300px;
-    flex-direction: column;
+  @media (max-width: ${breakpoints.desktop}) {
+    position: fixed;
+    width: 80%;
+    height: 50%;
+    top: 21%;
+    left: 10%;
+    flex-direction: row;
     justify-content: flex-start;
+  }
+  @media (max-width: ${breakpoints.tablet}) {
+    position: fixed;
+    width: 80%;
+    height: 40%;
+    top: 21%;
+    left: 10%;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  @media (max-width: ${breakpoints.mobile}) {
+    position: fixed;
+    justify-content: space-between;
+    width: 100vw;
+    height: 40%;
+    top: 21%;
+    left: 0%;
   }
 `
 export const ModalPedido = styled.div`
@@ -86,6 +105,11 @@ export const ModalPedido = styled.div`
     font-size: 14px;
     font-weight: 400;
     margin-bottom: 10px;
+
+    @media (max-width: ${breakpoints.tablet}) {
+      font-size: 80%;
+      line-height: 14px;
+    }
   }
 `
 export const ModalImagem = styled.img`
@@ -93,15 +117,22 @@ export const ModalImagem = styled.img`
   margin-left: 30px;
   width: 280px;
   height: 280px;
-  top: 0;
-  right: 0;
 
-  @media (max-width: ${breakpoints.mobile}) {
-    width: 90px;
-    height: 90px;
+  @media (max-width: ${breakpoints.tablet}) {
+    max-width: 100%;
+    max-height: 100%;
+    width: 100vw;
+    height: 30vh;
     margin-left: 0px;
     margin-top: 5px;
-    right: 0;
+  }
+  @media (max-width: ${breakpoints.mobile}) {
+    max-height: 100%;
+    max-width: 100%;
+    width: 100vw;
+    height: 30vh;
+    margin-left: 5px;
+    margin-top: 5px;
   }
 `
 export const ModalBotao = styled.button`
