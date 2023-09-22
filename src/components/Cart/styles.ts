@@ -1,5 +1,6 @@
 import { styled } from 'styled-components'
-import { breakpoints, cores } from '../../styles'
+import lixeira from '../../assets/images/lixeira.png'
+import { cores } from '../../styles'
 
 export const Overlay = styled.div`
   position: absolute;
@@ -10,96 +11,145 @@ export const Overlay = styled.div`
   background-color: #000;
   opacity: 0.7;
 `
+
 export const CartContainer = styled.div`
-  display: none;
-  color: ${cores.corHeader};
-  justify-content: flex-end;
   position: fixed;
-  z-index: 1;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  display: none;
+  justify-content: flex-end;
+  z-index: 1;
 
   &.is-open {
     display: flex;
   }
 `
-export const SideBar = styled.aside`
+
+export const Sidebar = styled.aside`
+  z-index: 1;
+  background-color: ${cores.corHeader};
   max-width: 360px;
   width: 100%;
-  background-color: ${cores.corHeader};
-  z-index: 1;
+  padding: 40px 16px 0 16px;
 
-  @media (max-width: 420px) {
-    max-width: 250px;
+  &.is-closed {
+    display: none;
+  }
+
+  label {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    color: ${cores.corBody};
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  input {
+    background-color: ${cores.corBody};
+    height: 32px;
+    padding: 8px;
+    border: none;
+    width: 100%;
+    margin-bottom: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    color: black;
+
+    &.error {
+      border: 2px solid red;
+      color: red;
+    }
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: ${cores.corBody};
+    margin-bottom: 16px;
   }
 `
-export const ListaItem = styled.ul`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-left: 5px;
+export const Title = styled.h3`
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: ${cores.corBody};
+  margin-bottom: 16px;
 `
-export const DescricaoItem = styled.p`
+
+export const InputGroup = styled.div`
+  display: flex;
+  gap: 34px;
+
+  #cardNumber {
+    width: 228px;
+  }
+`
+
+export const Prices = styled.p`
+  font-weight: bold;
+  font-size: 14px;
+  color: ${cores.branco};
+  margin-bottom: 24px;
+  margin-top: 16px;
+  margin-top: 40px;
   display: flex;
   justify-content: space-between;
-  margin: 0 8px;
-  color: ${cores.corBody};
-  margin: 16px 8px;
-`
-export const ButtonCart = styled.button`
-  max-width: 345px;
-  width: 100%;
 
-  border: none;
-
-  color: ${cores.corHeader};
-  background-color: ${cores.corBody};
-
-  font-size: 16px;
-  font-weight: bold;
-  text-decoration: none;
-
-  padding: 8px 16px;
-  margin: 10px 7px 5px 7px;
+  span {
+    color: ${cores.branco};
+  }
 `
 export const CartItem = styled.li`
+  display: flex;
+  gap: 16px;
+  border-bottom: 1px solid ${cores.branco};
+  padding: 8px;
   position: relative;
   background-color: ${cores.corBody};
-  justify-content: flex-start;
-  display: flex;
-  width: 344px;
-  padding: 8px 0;
   margin: 8px 0;
 
   img {
-    margin: 0 10px 0 7px;
-    width: 80px;
     height: 80px;
+    width: 80px;
     object-fit: cover;
   }
 
-  div {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    p {
-      margin: 16px 0;
-    }
-    img {
-      position: absolute;
-      top: 76px;
-      right: 0;
-      width: 16px;
-      height: 16px;
-      cursor: pointer;
-    }
+  h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 16px;
   }
 
-  @media (max-width: 420px) {
-    margin-left: 5px;
-    max-width: 230px;
+  span {
+    display: block;
+    font-size: 14px;
   }
+
+  button {
+    background-image: url(${lixeira});
+    width: 16px;
+    height: 16px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+  }
+`
+
+export const Button = styled.button`
+  width: 100%;
+  padding: 4px;
+  border: none;
+  background-color: ${cores.corBody};
+  color: ${cores.corHeader};
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 8px;
 `
