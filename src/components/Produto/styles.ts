@@ -10,21 +10,21 @@ export const Card = styled.div`
   border: solid 1px;
 
   .capa {
-    width: 472px;
+    width: 471px;
     height: 217px;
     object-fit: cover;
 
     @media (max-width: ${breakpoints.mobile}) {
       max-width: 472px;
-      width: 90vw;
+      width: 100%;
     }
     @media (min-width: ${breakpoints.tablet}) {
       max-width: 350px;
-      width: 90vw;
+      width: 100%;
     }
     @media (min-width: 900px) {
-      max-width: 400px;
-    width: 90vw;
+      max-width: 398px;
+      width: 100%;
 
     }
   }

@@ -39,15 +39,15 @@ export const Modal = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.33);
+    background-color: rgba(0, 0, 0, 0.9);
   }
 `
 export const ModalContent = styled.div`
   position: fixed;
   z-index: 1;
-  top: 21%;
-  left: 15%;
-  max-width: 1024px;
+  top: 25%;
+  left: 22.7%;
+  max-width: 1040px;
   width: 80%;
   height: 344px;
   display: flex;

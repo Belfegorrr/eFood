@@ -30,6 +30,12 @@ const Produto = ({
   image,
   destacados
 }: Props) => {
+  const getDescricaoHome = (description: string) => {
+    if (description.length > 123) {
+      return description.slice(0, 210) + '...'
+    }
+    return description
+  }
   return (
     <Card>
       <img src={image} alt={title} className="capa" />
@@ -48,7 +54,7 @@ const Produto = ({
           <TagDestacado key={destacado}>{destacado}</TagDestacado>
         ))}
       </div>
-      <Descricao>{description}</Descricao>
+      <Descricao>{getDescricaoHome(description)}</Descricao>
       <Button type="link" title="Detalhes" to={`/menu/${id}`}>
         Saiba mais
       </Button>

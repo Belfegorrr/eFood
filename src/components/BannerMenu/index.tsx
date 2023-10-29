@@ -19,6 +19,12 @@ const BannerMenu = ({ restaurant }: Props) => {
   const dispatch = useDispatch()
   const { items } = useSelector((state: RootReducer) => state.cart)
 
+  const toUpperCase = (tipo: string) => {
+    if (tipo === restaurant.tipo) {
+      return restaurant.tipo[0].toUpperCase() + restaurant.tipo.substring(1)
+    }
+  }
+
   const openCart = () => {
     dispatch(open())
   }
@@ -41,7 +47,7 @@ const BannerMenu = ({ restaurant }: Props) => {
         >
           <TituloMenu>
             <h3>
-              <i>{restaurant.tipo}</i>
+              <i>{toUpperCase(restaurant.tipo)}</i>
             </h3>
             <h2>{restaurant.titulo}</h2>
           </TituloMenu>

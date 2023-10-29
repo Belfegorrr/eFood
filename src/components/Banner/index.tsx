@@ -10,7 +10,6 @@ const Banner = () => (
       <HeaderBar>
         <img src={logo} alt="E-food" />
       </HeaderBar>
-      {/* <Tag size="big">.</Tag> */}
       <Titulos>
         Viva experiências gastronômicas <br /> no conforto da sua casa
       </Titulos>

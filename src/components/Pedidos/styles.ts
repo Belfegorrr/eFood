@@ -12,8 +12,8 @@ export const CardPedido = styled.div`
 
   width: 320px;
   height: 338px;
-  @media (min-width: ${breakpoints.mobile}) {
-    width: 270px;
+  @media (max-width: ${breakpoints.tablet}) {
+    max-width: 270px;
   }
 
   img {
@@ -25,7 +25,10 @@ export const CardPedido = styled.div`
     width: 304px;
     height: 167px;
 
-    @media (min-width: ${breakpoints.mobile}) {
+    @media (max-width: ${breakpoints.mobile}) {
+      width: 254px;
+    }
+    @media (max-width: ${breakpoints.tablet}) {
       width: 254px;
     }
   }
@@ -40,7 +43,10 @@ export const BotaoMenu = styled.button`
   background-color: ${cores.corBody};
   color: ${cores.corHeader};
 
-  @media (min-width: ${breakpoints.mobile}) {
+  @media (max-width: ${breakpoints.mobile}) {
+    width: 90%;
+  }
+  @media (max-width: ${breakpoints.tablet}) {
     width: 90%;
   }
 `

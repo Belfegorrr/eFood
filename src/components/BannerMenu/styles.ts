@@ -64,14 +64,14 @@ export const TituloMenu = styled.section`
     position: absolute;
     font-size: 32px;
     top: 30px;
-    left: 170px;
+    left: 10.5vw;
   }
   h2 {
     font-weight: bold;
     position: absolute;
     font-size: 32px;
     top: 240px;
-    left: 170px;
+    left: 10.5vw;
   }
 
   @media (max-width: ${breakpoints.mobile}) {
