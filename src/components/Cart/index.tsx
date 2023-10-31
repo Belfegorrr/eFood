@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Navigate, useNavigate } from 'react-router-dom'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 
@@ -18,8 +18,6 @@ import {
   Sidebar,
   Title
 } from './styles'
-
-import lixeira from '../../assets/images/lixeira.png'
 
 const Cart = () => {
   const [purchase, { data, isLoading, isError, isSuccess }] =
@@ -61,24 +59,29 @@ const Cart = () => {
         .required('Campo obrigatorio'),
       CEP: Yup.string()
         .min(8, 'O campo precisa ter pelo menos 8 caracteres')
+        .max(9, 'O campo precisa ter pelo menos 8 caracteres')
         .required('Campo obrigatorio'),
       number: Yup.number()
-        .min(2, 'O campo precisa ter pelo menos 8 caracteres')
+        .min(2, 'O campo precisa ter pelo menos 2 caracteres')
         .required('Campo obrigatorio'),
       cardName: Yup.string()
         .min(8, 'O campo precisa ter pelo menos 8 caracteres')
         .required('Campo obrigatorio'),
       cardNumber: Yup.string()
-        .min(16, 'O campo precisa ter pelo menos 16 caracteres')
+        .min(16, 'O campo precisa ter exatamente 16 caracteres')
+        .max(16, 'O campo precisa ter exatamente 16 caracteres')
         .required('Campo obrigatorio'),
-      cvv: Yup.number()
-        .min(3, 'O campo precisa ter pelo menos 8 caracteres')
+      cvv: Yup.string()
+        .min(3, 'O campo precisa ter exatamente 3 caracteres')
+        .max(3, 'O campo precisa ter exatamente 3 caracteres')
         .required('Campo obrigatorio'),
       expiresMonth: Yup.string()
-        .min(1, 'O campo precisa ter pelo menos 8 caracteres')
+        .min(2, 'O campo precisa ter exatamente 2 caracteres')
+        .max(2, 'O campo precisa ter exatamente 2 caracteres')
         .required('Campo obrigatorio'),
       expiresYear: Yup.string()
-        .min(4, 'O campo precisa ter pelo menos 8 caracteres')
+        .min(4, 'O campo precisa ter exatamente 4 caracteres')
+        .max(4, 'O campo precisa ter exatamente 4 caracteres')
         .required('Campo obrigatorio')
     }),
     onSubmit: (values) => {
@@ -187,6 +190,10 @@ const Cart = () => {
       return (acumulador += valorAtual.preco)
     }, 0)
   }
+
+  // if (items.length === 0) {
+  //   return <Navigate to="/" />
+  // }
 
   return (
     <CartContainer className={isOpen ? 'is-open' : ''}>
