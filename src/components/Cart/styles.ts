@@ -146,7 +146,7 @@ export const Button = styled.button`
   width: 100%;
   padding: 4px;
   border: none;
-  background-color: ${cores.corBody};
+  background-color: emptyCart ? '${cores.corBody}' : '#ccc';
   color: ${cores.corHeader};
   font-weight: bold;
   font-size: 14px;

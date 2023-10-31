@@ -191,10 +191,6 @@ const Cart = () => {
     }, 0)
   }
 
-  // if (items.length === 0) {
-  //   return <Navigate to="/" />
-  // }
-
   return (
     <CartContainer className={isOpen ? 'is-open' : ''}>
       <Overlay onClick={closeCart} />
@@ -220,7 +216,13 @@ const Cart = () => {
         <Prices>
           Valor total <span>{formataPreco(getTotalPrice())}</span>
         </Prices>
-        <Button onClick={goToPurchase}>Continuar com a entrega</Button>
+        <Button
+          className={emptyCart ? '' : 'emptyCart'}
+          disabled={items.length < 1}
+          onClick={goToPurchase}
+        >
+          Continuar com a entrega
+        </Button>
       </Sidebar>
       <Sidebar className={purchaseData ? '' : 'is-closed'}>
         <Title>Entrega</Title>
@@ -263,7 +265,7 @@ const Cart = () => {
             <div>
               <label htmlFor="CEP">CEP</label>
               <input
-                type="text"
+                type="number"
                 name="CEP"
                 id="CEP"
                 onChange={form.handleChange}
@@ -274,7 +276,7 @@ const Cart = () => {
             <div>
               <label htmlFor="number">Número</label>
               <input
-                type="text"
+                type="number"
                 name="number"
                 id="number"
                 onChange={form.handleChange}
