@@ -59,7 +59,7 @@ const Cart = () => {
         .required('Campo obrigatorio'),
       CEP: Yup.string()
         .min(8, 'O campo precisa ter pelo menos 8 caracteres')
-        .max(9, 'O campo precisa ter pelo menos 8 caracteres')
+        .max(8, 'O campo precisa ter pelo menos 8 caracteres')
         .required('Campo obrigatorio'),
       number: Yup.number()
         .min(2, 'O campo precisa ter pelo menos 2 caracteres')
@@ -75,13 +75,15 @@ const Cart = () => {
         .min(3, 'O campo precisa ter exatamente 3 caracteres')
         .max(3, 'O campo precisa ter exatamente 3 caracteres')
         .required('Campo obrigatorio'),
-      expiresMonth: Yup.string()
-        .min(2, 'O campo precisa ter exatamente 2 caracteres')
-        .max(2, 'O campo precisa ter exatamente 2 caracteres')
+      expiresMonth: Yup.number()
+        .positive('O mês deve ser maior que zero')
+        .lessThan(13, 'O mês deve ser menor que 13')
+        .integer('O mês deve ser um número inteiro')
         .required('Campo obrigatorio'),
-      expiresYear: Yup.string()
-        .min(4, 'O campo precisa ter exatamente 4 caracteres')
-        .max(4, 'O campo precisa ter exatamente 4 caracteres')
+      expiresYear: Yup.number()
+        .positive('O ano deve ser maior que zero')
+        .moreThan(2023, 'O ano deve ser maior que o ano atual')
+        .integer('O ano deve ser um número inteiro')
         .required('Campo obrigatorio')
     }),
     onSubmit: (values) => {
@@ -265,7 +267,7 @@ const Cart = () => {
             <div>
               <label htmlFor="CEP">CEP</label>
               <input
-                type="number"
+                type="text"
                 name="CEP"
                 id="CEP"
                 onChange={form.handleChange}
